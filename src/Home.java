@@ -1,3 +1,13 @@
-public class Home extends Usuario {
-    private String mensagem;
+public class Home {
+    private String statusPredio;
+
+    public Home() {
+        Sy
+    }
+    public String getStatusPredio() {
+        return statusPredio;
+    }
+    public void setStatusPredio(String statusPredio) {
+        this.statusPredio = statusPredio;
+    }
 }

@@ -1,13 +1,9 @@
-import javax.swing.*;
-
 public class Main {
     public static void main(String[] args) {
-       Login entrar = new Login("Fellipe",true );
+       Login usuario = new Login();
+        //System.out.println(entrar);
+        //Home pagInicial = new Home();
 
-        String nome = JOptionPane.showInputDialog(null, "Seu nome: ");
-        String impressaoDigital = JOptionPane.showInputDialog(null, "Possui digital cadastrada: ");
-
-        System.out.println(entrar);
     }
 }
 
