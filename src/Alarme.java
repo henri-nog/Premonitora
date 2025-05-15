@@ -1,12 +1,15 @@
 import java.util.Random;
 
 public abstract class Alarme {
+    Home home = new Home();
     private int numeroDesabamentoEmSuaArea;
     public void alerta() {
-        if (getNumeroDesabamentoEmSuaArea() != 0) {
+        if (getNumeroDesabamentoEmSuaArea() == 0) {
+            System.out.println("Atualmente, não há risco de desabamento na área. Fique tranquilo(a)");
+        } else if (getNumeroDesabamentoEmSuaArea() > 10){
             System.out.println("ATENÇÃO!!! Desabamento em sua área!");
         } else {
-            System.out.println("Atualmente, não há risco de desabamento na área. Fique tranquilo(a)");
+
         }
     }
     Random gerador = new Random();
