@@ -2,8 +2,9 @@ public class Main {
     public static void main(String[] args) {
        Login usuario = new Login();
         //System.out.println(entrar);
-        //Home pagInicial = new Home();
+        Home pagInicial = new Home();
 
+       // System.out.println(pagInicial.calculaChanceDesabamento());
     }
 }
 
