@@ -1,23 +1,16 @@
 public class Mapa {
-    //private String[] locais;
 
     public enum Bairro {
-        Jardim_Atlantico("Jardim Atlântico",24),
-
-        Candeias("Candeias",16),
-
-        Iputinga("Iputinga",14),
-
-        Janga("Janga",13),
-
-        Imbiribeira("Imbiribeira",13),
-
-        Varzea("Várzea",11);
-
+        Jardim_Atlantico("Jardim Atlântico", 24),
+        Candeias("Candeias", 16),
+        Iputinga("Iputinga", 14),
+        Janga("Janga", 13),
+        Imbiribeira("Imbiribeira", 13),
+        Varzea("Várzea", 11);
 
         private final String nomeBairro;
         private int numDesabamento;
-        private String menu;
+        private int numDesabamentos;
 
         Bairro(String nomeBairro, int numDesabamento) {
             this.nomeBairro = nomeBairro;
@@ -32,21 +25,27 @@ public class Mapa {
             return numDesabamento;
         }
 
-        public void menu() {
-            System.out.println("Escolha um bairro");
-            System.out.println("1 - Jardim Atlântico");
-            System.out.println("2 - Candeias");
-            System.out.println("3 - Iputinga");
-            System.out.println("4 - Janga");
-            System.out.println("5 - Imbiribeira");
-            System.out.println("6 - Várzea");
-            System.out.println("7 - Sair");
+        public void incrementarDesabamento() {
+            this.numDesabamentos++;
+        }
+
+        // Método utilitário para buscar bairro pelo nome digitado
+        public static Bairro buscarPorNome(String nome) {
+            for (Bairro b : Bairro.values()) {
+                if (b.getNomeBairro().equalsIgnoreCase(nome.trim())) {
+                    return b;
+                }
+            }
+            return null; // bairro não encontrado
+        }
+
+        // Menu separado
+        public static void mostrarMenu() {
+            System.out.println("\nEscolha um bairro (digite o nome exatamente):");
+            for (Bairro b : Bairro.values()) {
+                System.out.println("- " + b.getNomeBairro());
+            }
+            System.out.println("- Sair");
         }
     }
 }
-
-
-
-
-
-
