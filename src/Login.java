@@ -1,92 +1,96 @@
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 public class Login {
-    //private String nomeUsuario; //modificado
-    //private String senha;
-    private boolean digital; //modificado
 
-    public Login(/*String nomeUsuario, boolean digital*/) {
-        //System.out.println("\nOlá, bem-vindo(a) ao Premonitora.\n");
-//                            this.nomeUsuario = nomeUsuario;
-//                            senha = "1234";
-                            //this.digital = digital;
-        JFrame janela = new JFrame();
+    // Construtor Login agora recebe o objeto Perfil
+    public Login(Perfil perfil) {
+        // Criar o scanner para capturar os dados
+        Scanner scanner = new Scanner(System.in);
 
-        JLabel labelMensagem = new JLabel("Olá, bem-vindo(a) ao Premonitora.");
-        labelMensagem.setBounds(40,10,400,30);
+        // Solicitar os dados do usuário no console
+        System.out.println("=== Bem-vindo(a) ao PreMonitora ===");
 
-        JLabel labelUsuario = new JLabel("Usuário: ");
-        labelUsuario.setBounds(50,50,100,30);
+        // Captura o nome do usuário
+        System.out.print("Digite o seu nome: ");
+        String nome = scanner.nextLine();
 
-        JTextField campoUsuario = new JTextField();
-        campoUsuario.setBounds(50,80,100,30);
+        // Captura o CPF
+        System.out.print("Digite o seu CPF: ");
+        String cpf = scanner.nextLine();
 
-        JPasswordField campoSenha = new JPasswordField();
-        campoSenha.setBounds(50,180,150,30);
-
-        JLabel labelSenha = new JLabel("Senha: ");
-        labelSenha.setBounds(50,150,100,30);
-
-        JButton botaoLogar = new JButton("Login");
-        botaoLogar.setBounds(50,230,150,30);
-        botaoLogar.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String usuario = campoUsuario.getText();
-                String senha = new String(campoSenha.getPassword());
-                System.out.printf("Usuário: %s\nSenha: %s", usuario, senha);
-                campoUsuario.setText("");
-                campoSenha.setText("");
+        // Captura a idade
+        System.out.print("Digite a sua idade: ");
+        int idade = 0;
+        while (true) {
+            try {
+                idade = Integer.parseInt(scanner.nextLine());
+                break;  // Sai do loop se a idade for válida
+            } catch (NumberFormatException e) {
+                System.out.print("Por favor, insira uma idade válida: ");
             }
-        });
+        }
 
-        janela.add(botaoLogar);
-        janela.add(labelUsuario);
-        janela.add(campoUsuario);
-        janela.add(campoSenha);
-        janela.add(labelSenha);
-        janela.add(labelMensagem);
+        // Captura o endereço
+        System.out.print("Digite o seu endereço: ");
+        String endereco = scanner.nextLine();
 
-        janela.setLayout(null);
-        janela.setBounds(400, 100, 300, 350);
-        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        janela.setVisible(true);
+        // Agora associamos as informações ao perfil
+        perfil.setNome(nome);
+        perfil.setCpf(cpf);
+        perfil.setIdade(idade);
+        perfil.setEndereco(endereco);
+
+        // Exibe mensagem de sucesso
+        System.out.println("Cadastro realizado com sucesso!");
+
+        // Após o cadastro, chama o menu de opções
+        exibirMenuConsole(perfil);
     }
 
-    @Override
-    public String toString() {
-        String informacoes = String.format("Seu nome é %s e sua impressão digital consta como: %b.",
-                //nomeUsuario,
-                digital);
-        return informacoes;
+    // Método para exibir o menu no console após o login
+    private void exibirMenuConsole(Perfil perfil) {
+        Scanner scanner = new Scanner(System.in);
+        boolean rodando = true;
+
+        while (rodando) {
+            System.out.println("\n===*** MENU ***===");
+            System.out.println("1. Acessar tela inicial (Home)");
+            System.out.println("2. Ver status de um bairro específico");
+            System.out.println("3. Sair");
+
+            System.out.print("Escolha uma opção: ");
+            String escolha = scanner.nextLine();
+
+            switch (escolha) {
+                case "1":
+                    Home.exibirHome(scanner, perfil);
+                    break;
+                case "2":
+                    Mapa.mostrarMenu();
+                    System.out.print("Digite o nome do bairro: ");
+                    String entrada = scanner.nextLine();
+                    if (entrada.equalsIgnoreCase("sair")) {
+                        break;
+                    }
+                    Bairro bairroEscolhido = Mapa.buscarPorNome(entrada);
+                    if (bairroEscolhido != null) {
+                        perfil.setBairroAtual(bairroEscolhido);
+                        System.out.println("O bairro digitado, " + bairroEscolhido.getNome()
+                                + ", possui " + bairroEscolhido.getNumDesabamentos() + " desabamentos.");
+                    } else {
+                        System.out.println("O bairro informado não possui registro de desabamentos em nosso sistema.");
+                    }
+                    break;
+                case "3":
+                    System.out.println("Encerrando o sistema...");
+                    rodando = false;
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        }
+
+        scanner.close();
     }
 
-//    public boolean getDigital() { //modificado
-//        return digital;
-//    }
-//
-//    public void setDigital(boolean digital) { //modificado
-//        this.digital = digital;
-//    }
-
-
-
-//    public String getNomeUsuario() { //modificado
-//        return nomeUsuario;
-//    }
-//
-//    public void setNomeUsuario(String nomeUsuario) { //modificado
-//        this.nomeUsuario = nomeUsuario;
-//    }
-//
-//    public String getSenha() {
-//        return senha;
-//    }
-//
-//    public void setSenha(String senha) {
-//        this.senha = senha;
-//    }
 }

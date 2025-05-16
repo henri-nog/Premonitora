@@ -1,31 +1,103 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
+        // Criando o perfil do usuário
         Scanner scanner = new Scanner(System.in);
+        Perfil perfil = new Perfil();
 
-        String entrada;
+        // Dados do usuário
+        System.out.println("=== Bem-vindo(a) ao PreMonitora ===");
+        System.out.print("Digite o seu nome: ");
+        perfil.setNome(scanner.nextLine());
+        System.out.print("Digite o seu CPF: ");
+        perfil.setCpf(scanner.nextLine());
+        System.out.print("Digite a sua idade: ");
+        perfil.setIdade(Integer.parseInt(scanner.nextLine()));
+        System.out.print("Digite o seu endereço: ");
+        perfil.setEndereco(scanner.nextLine());
 
-        while (true) {
-            Mapa.Bairro.mostrarMenu();
-            System.out.print("Digite o nome do bairro: ");
-            entrada = scanner.nextLine();
+        // Solicitar a senha e armazená-la no perfil
+        System.out.print("Digite a sua senha: ");
+        perfil.setSenha(scanner.nextLine());  // Agora a senha é registrada!
 
-            if (entrada.equalsIgnoreCase("sair")) {
-                System.out.println("Encerrando o programa.");
-                break;
-            }
+        System.out.println("Cadastro realizado com sucesso!");
 
-            Mapa.Bairro bairroEscolhido = Mapa.Bairro.buscarPorNome(entrada);
+        // Menu principal
+        exibirMenuConsole(perfil);
+    }
 
-            if (bairroEscolhido != null) {
-                System.out.println("O bairro digitado, " + bairroEscolhido.getNomeBairro()
-                        + ", possui " + bairroEscolhido.getNumDesabamento() + " desabamentos.");
-            } else {
-                System.out.println("O bairro informado não possui registro de desabamentos em nosso sistema.");
+    // Método para exibir o menu principal
+    public static void exibirMenuConsole(Perfil perfil) {
+        Scanner scanner = new Scanner(System.in);
+        boolean rodando = true;
+
+        while (rodando) {
+            System.out.println("\n===*** MENU ***===");
+            System.out.println("1. Acessar tela inicial (Home)");
+            System.out.println("2. Ver status de um bairro específico");
+            System.out.println("3. Acessar perfil");
+            System.out.println("4. Sair");
+
+            System.out.print("Escolha uma opção: ");
+            String escolha = scanner.nextLine();
+
+            switch (escolha) {
+                case "1":
+                    // Aqui você chamaria a função para a tela inicial, por exemplo:
+                    // Home.exibirHome(scanner, perfil);
+                    break;
+                case "2":
+                    // Aqui você chamaria a função para verificar o bairro
+                    // Mapa.mostrarMenu();
+                    break;
+                case "3":
+                    exibirPerfil(perfil, scanner);  // Chama o menu do perfil
+                    break;
+                case "4":
+                    System.out.println("Encerrando o sistema...");
+                    rodando = false;
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
             }
         }
 
         scanner.close();
+    }
+
+    // Método para exibir o perfil do usuário
+    public static void exibirPerfil(Perfil perfil, Scanner scanner) {
+        boolean rodando = true;
+
+        while (rodando) {
+            System.out.println("\n🔐 Perfil do usuário:");
+            System.out.println("Nome: " + perfil.getNome());
+            System.out.println("CPF: " + perfil.getCpf());
+            System.out.println("Idade: " + perfil.getIdade());
+            System.out.println("Endereço: " + perfil.getEndereco());
+            System.out.println("\nEscolha uma opção:");
+            System.out.println("1. Trocar senha");
+            System.out.println("2. Assinar Modo Premium");
+            System.out.println("3. Sair");
+
+            String opcao = scanner.nextLine();
+
+            switch (opcao) {
+                case "1":
+                    perfil.trocarSenha(scanner);
+                    break;
+                case "2":
+                    perfil.assinarModoPremium(scanner);
+                    break;
+                case "3":
+                    System.out.println("Saindo do perfil...");
+                    rodando = false;
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        }
     }
 }

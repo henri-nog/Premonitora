@@ -1,36 +1,26 @@
-import java.util.Random;
+public class Alarme {
 
-public abstract class Alarme {
-    Home home = new Home();
-    private int numeroDesabamentoEmSuaArea;
-    public void alerta() {
-        if (getNumeroDesabamentoEmSuaArea() == 0) {
-            System.out.println("Atualmente, não há risco de desabamento na área. Fique tranquilo(a)");
-        } else if (getNumeroDesabamentoEmSuaArea() > 10){
-            System.out.println("ATENÇÃO!!! Desabamento em sua área!");
-        } else {
-
+    public static void exibirAlerta(int numeroDesabamentos) {
+        if (numeroDesabamentos == 0) {
+            System.out.println("✅ Atualmente, NÃO há risco de desabamento na área. Fique tranquilo(a).");
+        } else if (numeroDesabamentos < 5) {
+            System.out.println("⚠️ Sua área possui risco LEVE de desabamento.");
+        } else if (numeroDesabamentos > 5 && numeroDesabamentos < 10) {
+            System.out.println("Sua área possui risco MÉDIO de desabamento.");
+        }  else {
+            System.out.println("⚠️ ATENÇÃO!!! ALTO RISCO de desabamento em sua área!");
         }
     }
-    Random gerador = new Random();
-    int situacao = 1 + gerador.nextInt(2);
 
-    public int getNumeroDesabamentoEmSuaArea() {
-        return numeroDesabamentoEmSuaArea;
+    public static void chamarSAMU() {
+        System.out.println("🚑 O SAMU está a caminho.");
     }
 
-    public void setNumeroDesabamentoEmSuaArea(int situacao) {
-        this.numeroDesabamentoEmSuaArea = situacao;
-    }
-    public void chamarSAMU() {
-        System.out.println("O SAMU está a caminho");
+    public static void chamarBombeiros() {
+        System.out.println("🚒 Os bombeiros estão a caminho.");
     }
 
-    public void chamarBombeiros() {
-        System.out.println("Os bombeiros estam a caminho");
-    }
-
-    public void chamarDefesaCivil() {
-        System.out.println("A Defesa Civil está a caminho");
+    public static void chamarDefesaCivil() {
+        System.out.println("🏗️ A Defesa Civil está a caminho.");
     }
 }
