@@ -75,14 +75,14 @@ public class Perfil {
     // Método para assinar o modo Premium
     public void assinarModoPremium(Scanner scanner) {
         System.out.println("\nDeseja assinar o Modo Premium?");
-        System.out.println("Premium Vigilante R$ 0 por 1 mês. Depois é só R$ 11,90/mês");
+        System.out.println("\"Premium Vigilante R$ 0 por 1 mês. Depois é só R$ 11,90/mês\"");
         System.out.println("1. Assinar Modo Premium");
         System.out.println("2. Cancelar Modo Premium");
 
         String escolha = scanner.nextLine();
 
         if (escolha.equals("1")) {
-            System.out.println("Você assinou o Modo Premium com sucesso!");
+            System.out.println("Você assinou o Modo Premium! Já, já não será preciso ver ficar vendo nenhum anúncio!");
         } else if (escolha.equals("2")) {
             System.out.println("Assinatura cancelada.");
         } else {
@@ -95,16 +95,16 @@ public class Perfil {
         boolean rodando = true;
 
         while (rodando) {
-            System.out.println("\n🔐 Perfil do usuário:");
+            System.out.println("\n🔐 Perfil do usuário");
             System.out.println("Nome: " + perfil.getNome());
             System.out.println("CPF: " + perfil.getCpf());
             System.out.println("Idade: " + perfil.getIdade());
             System.out.println("Endereço: " + perfil.getEndereco());
             System.out.println("Senha: " + perfil.getSenha());  // Exibindo a senha
-            System.out.println("\nEscolha uma opção:");
             System.out.println("1. Trocar senha");
             System.out.println("2. Assinar Modo Premium");
             System.out.println("3. Sair");
+            System.out.println("Escolha uma opção:");
 
             String opcao = scanner.nextLine();
 

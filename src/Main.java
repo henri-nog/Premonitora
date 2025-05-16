@@ -50,7 +50,7 @@ public class Main {
                     break;
                 case "2":
                     // Aqui você chamaria a função para verificar o bairro
-                    // Mapa.mostrarMenu();
+                    Mapa.mostrarMenu();
                     break;
                 case "3":
                     exibirPerfil(perfil, scanner);  // Chama o menu do perfil
@@ -77,6 +77,7 @@ public class Main {
             System.out.println("CPF: " + perfil.getCpf());
             System.out.println("Idade: " + perfil.getIdade());
             System.out.println("Endereço: " + perfil.getEndereco());
+            System.out.println("Senha: " + perfil.getSenha());
             System.out.println("\nEscolha uma opção:");
             System.out.println("1. Trocar senha");
             System.out.println("2. Assinar Modo Premium");
