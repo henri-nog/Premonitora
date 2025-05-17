@@ -38,11 +38,11 @@ public class Mapa {
     }
 
     public static void mostrarMenu() {
-        System.out.println("\nEscolha um bairro (digite o nome exatamente):");
+        System.out.println("\nEscolha um bairro:");
         for (Bairro bairro : bairros.values()) {
             System.out.println("- " + bairro);
         }
-        System.out.println("- Sair");
+//        System.out.println("- Sair");
     }
 
     public static boolean haRiscoNaArea() {

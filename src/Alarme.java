@@ -13,14 +13,14 @@ public class Alarme {
     }
 
     public static void chamarSAMU() {
-        System.out.println("🚑 O SAMU está a caminho.");
+        System.out.println("🚑 \"O SAMU está a caminho\".");
     }
 
     public static void chamarBombeiros() {
-        System.out.println("🚒 Os bombeiros estão a caminho.");
+        System.out.println("🚒 \"Os bombeiros estão a caminho\".");
     }
 
     public static void chamarDefesaCivil() {
-        System.out.println("🏗️ A Defesa Civil está a caminho.");
+        System.out.println("🏗️ \"A Defesa Civil está a caminho\".");
     }
 }

@@ -91,7 +91,7 @@ public class Perfil {
     }
 
     // Método para exibir o perfil do usuário
-    private static void exibirPerfil(Perfil perfil, Scanner scanner) {
+    protected static void exibirPerfil(Perfil perfil, Scanner scanner) {
         boolean rodando = true;
 
         while (rodando) {
@@ -126,42 +126,40 @@ public class Perfil {
     }
 
 
-    // Método para exibir o menu principal do sistema
-    public static void exibirMenuConsole(Perfil perfil) {
-        Scanner scanner = new Scanner(System.in);
-        boolean rodando = true;
-
-        while (rodando) {
-            System.out.println("\n===*** MENU ***===");
-            System.out.println("1. Acessar tela inicial (Home)");
-            System.out.println("2. Ver status de um bairro específico");
-            System.out.println("3. Acessar perfil");
-            System.out.println("4. Sair");
-
-            System.out.print("Escolha uma opção: ");
-            String escolha = scanner.nextLine();
-
-            switch (escolha) {
-                case "1":
-                    // Aqui você chamaria a função para a tela inicial, por exemplo:
-                    // Home.exibirHome(scanner, perfil);
-                    break;
-                case "2":
-                    // Aqui você chamaria a função para verificar o bairro
-                    // Mapa.mostrarMenu();
-                    break;
-                case "3":
-                    exibirPerfil(perfil, scanner);  // Chama o menu do perfil
-                    break;
-                case "4":
-                    System.out.println("Encerrando o sistema...");
-                    rodando = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-            }
-        }
-
-        scanner.close();
-    }
+     //Método para exibir o menu principal do sistema
+//    public static void exibirMenuConsole(Perfil perfil) {
+//        Scanner scanner = new Scanner(System.in);
+//        boolean rodando = true;
+//
+//        while (rodando) {
+//            System.out.println("\n===*** MENU ***===");
+//            System.out.println("1. Acessar tela inicial (Home)");
+//            System.out.println("2. Ver status de um bairro específico");
+//            System.out.println("3. Acessar perfil");
+//            System.out.println("4. Sair");
+//
+//            System.out.print("Escolha uma opção: ");
+//            String escolha = scanner.nextLine();
+//
+//            switch (escolha) {
+//                case "1":
+//                    // Aqui você chamaria a função para a tela inicial, por exemplo:
+//                    // Home.exibirHome(scanner, perfil);
+//                    break;
+//                case "2":
+//                    // Aqui você chamaria a função para verificar o bairro
+//                    // Mapa.mostrarMenu();
+//                    break;
+//                case "3":
+//                    exibirPerfil(perfil, scanner);  // Chama o menu do perfil
+//                    break;
+//                case "4":
+//                    System.out.println("Encerrando o sistema...");
+//                    rodando = false;
+//                    break;
+//                default:
+//                    System.out.println("Opção inválida.");
+//            }
+//     }
 }
+

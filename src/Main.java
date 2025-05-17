@@ -6,7 +6,7 @@ public class Main {
         // Criando o perfil do usuário
         Scanner scanner = new Scanner(System.in);
         Perfil perfil = new Perfil();
-
+        
         // Dados do usuário
         System.out.println("=== Bem-vindo(a) ao PreMonitora ===");
         System.out.print("Digite o seu nome: ");
@@ -17,8 +17,6 @@ public class Main {
         perfil.setIdade(Integer.parseInt(scanner.nextLine()));
         System.out.print("Digite o seu endereço: ");
         perfil.setEndereco(scanner.nextLine());
-
-        // Solicitar a senha e armazená-la no perfil
         System.out.print("Digite a sua senha: ");
         perfil.setSenha(scanner.nextLine());  // Agora a senha é registrada!
 
@@ -37,7 +35,7 @@ public class Main {
             System.out.println("\n===*** MENU ***===");
             System.out.println("1. Acessar tela inicial (Home)");
             System.out.println("2. Ver status de um bairro específico");
-            System.out.println("3. Acessar perfil");
+            System.out.println("3. Acessar perfil"); //deletar
             System.out.println("4. Sair");
 
             System.out.print("Escolha uma opção: ");
@@ -46,14 +44,14 @@ public class Main {
             switch (escolha) {
                 case "1":
                     // Aqui você chamaria a função para a tela inicial, por exemplo:
-                    // Home.exibirHome(scanner, perfil);
+                     Home.exibirHome(scanner, perfil);
                     break;
                 case "2":
                     // Aqui você chamaria a função para verificar o bairro
                     Mapa.mostrarMenu();
                     break;
                 case "3":
-                    exibirPerfil(perfil, scanner);  // Chama o menu do perfil
+                    Perfil.exibirPerfil(perfil, scanner);  // Chama o menu do perfil
                     break;
                 case "4":
                     System.out.println("Encerrando o sistema...");
@@ -79,7 +77,7 @@ public class Main {
             System.out.println("Endereço: " + perfil.getEndereco());
             System.out.println("Senha: " + perfil.getSenha());
             System.out.println("\nEscolha uma opção:");
-            System.out.println("1. Trocar senha");
+            System.out.println("\n1. Trocar senha");
             System.out.println("2. Assinar Modo Premium");
             System.out.println("3. Sair");
 
