@@ -1,19 +1,30 @@
+package view;
+
+/*
+ * @author Fellipe Henrique Nogueira Fernandes Caluête
+ * @version 1.0
+ */
+
+import model.Perfil;
+import model.Cadastro;
+import model.Home;
+import model.Mapa;
+
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Perfil perfil = new Perfil(); // usuário comum
+        Perfil perfil = new Perfil();
 
-        // Cadastro
+        //Cadastro
         new Cadastro(perfil);
-        
+
         // Menu principal
         exibirMenuConsole(perfil);
     }
-
-    // Método para exibir o menu principal
+    //Método para exibir o menu principal
     public static void exibirMenuConsole(Perfil perfil) {
         Scanner scanner = new Scanner(System.in);
         boolean rodando = true;
@@ -45,3 +56,6 @@ public class Main {
         scanner.close();
     }
 }
+
+
+

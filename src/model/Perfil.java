@@ -1,45 +1,15 @@
+package model;
+
+/*
+ * @author Fellipe Henrique Nogueira Fernandes Caluête
+ * @version 1.0
+ */
+
 import java.util.Scanner;
 
-public class Perfil {
-    private String nome;
-    private String cpf;
-    private int idade;
-    private String endereco;
+public class Perfil extends Usuario {
+
     private Bairro bairroAtual;
-    private String senha;
-
-    // Métodos getters e setters
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
 
     public Bairro getBairroAtual() {
         return bairroAtual;
@@ -49,30 +19,16 @@ public class Perfil {
         this.bairroAtual = bairroAtual;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    // Método para trocar a senha
     public void trocarSenha(Scanner scanner) {
         System.out.print("Digite a senha atual: ");
         String senhaAtual = scanner.nextLine();
 
-        if (senhaAtual.equals(this.senha)) {
-            System.out.print("Digite a nova senha: ");
-            String novaSenha = scanner.nextLine();
-            this.senha = novaSenha;
-            System.out.println("Senha alterada com sucesso!");
-        } else {
-            System.out.println("Senha atual incorreta.");
-        }
+        System.out.print("Digite a nova senha: ");
+        String novaSenha = scanner.nextLine();
+
+        super.trocarSenha(senhaAtual, novaSenha);
     }
 
-    // Método para assinar o Modo Premium
     public void assinarModoPremium(Scanner scanner) {
         System.out.println("\nDeseja assinar o Modo Premium?");
         System.out.println("\"Premium Vigilante R$ 0 por 1 mês. Depois é só R$ 11,90/mês\"");
@@ -90,7 +46,6 @@ public class Perfil {
         }
     }
 
-    // Método para exibir o perfil do usuário
     public static void exibirPerfil(Perfil perfil, Scanner scanner) {
         boolean rodando = true;
 
@@ -100,7 +55,7 @@ public class Perfil {
             System.out.println("CPF: " + perfil.getCpf());
             System.out.println("Idade: " + perfil.getIdade());
             System.out.println("Endereço: " + perfil.getEndereco());
-            System.out.println("Senha: " + perfil.getSenha());  // Exibindo a senha
+            System.out.println("Senha: " + perfil.getSenha());
             System.out.println("\n1. Trocar senha");
             System.out.println("2. Assinar Modo Premium");
             System.out.println("3. Sair");
@@ -125,4 +80,3 @@ public class Perfil {
         }
     }
 }
-

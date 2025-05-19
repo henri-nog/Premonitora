@@ -1,5 +1,12 @@
-public class Alarme {
+package model;
 
+/*
+ * @author Fellipe Henrique Nogueira Fernandes Caluête
+ * @version 1.0
+ */
+
+public class Alarme {
+    // Exibe mensagem de alerta com base no número de desabamentos
     public static void exibirAlerta(int numeroDesabamentos) {
         if (numeroDesabamentos == 0) {
             System.out.println("Atualmente, NÃO há risco de desabamento na área. Fique tranquilo(a).");
@@ -11,12 +18,12 @@ public class Alarme {
             System.out.println("ATENÇÃO!!! ALTO RISCO de desabamento em sua área!");
         }
     }
-
+    // Simula chamada de emergência
     public static void chamarSAMU() {
         System.out.println("\n\"O SAMU está a caminho\".");
     }
     public static void chamarBombeiros() {
-        System.out.println("\n\"Os bombeiros estão a caminho\".");
+        System.out.println("\n\"Os Bombeiros estão a caminho\".");
     }
     public static void chamarDefesaCivil() {
         System.out.println("\n\"A Defesa Civil está a caminho\".");

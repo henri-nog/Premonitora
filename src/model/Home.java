@@ -1,19 +1,27 @@
+package model;
+
+/*
+ * @author Fellipe Henrique Nogueira Fernandes Caluête
+ * @version 1.0
+ */
+
 import java.util.Scanner;
 
 public class Home {
 
+    //Tela principal após cadastro
     public static void exibirHome(Scanner scanner, Perfil perfil) {
         boolean executando = true;
 
         while (executando) {
             exibirMensagemInicial(perfil);
 
-            // Verificando se o bairroAtual é null
+            //Verificando se o bairro atual é vazio
             Bairro bairroAtual = perfil.getBairroAtual();
             if (bairroAtual == null) {
                 System.out.println("Para filtrar por seu bairro, faça \"Acessar tela inicial (Home)\" > \"Ver Mapa\" e digite o nome do bairro");
             } else {
-                // Verificando o risco de desabamento
+                //Verificando o risco de desabamento
                 if (bairroAtual.getNumDesabamentos() > 5) {
                     // Se o risco for médio ou alto, ofereça opções para chamar serviços
                     System.out.println("\nSeu bairro está em RISCO! Você pode chamar serviços de emergência.");
@@ -46,7 +54,7 @@ public class Home {
             }
 
             // Exibindo menu
-            System.out.println("\n===*** TELA INICIAL (HOME) ***==="); // Menu do Home
+            System.out.println("\n===*** TELA INICIAL (HOME) ***==="); // Menu do model.Home
             System.out.println("1. Ver Mapa");
             System.out.println("2. Adicionar novo registro");
             System.out.println("3. Acessar perfil");
@@ -57,10 +65,10 @@ public class Home {
 
             switch (opcao) {
                 case "1":
-                    Mapa.executarMenu(scanner, perfil); // ⚠ Aqui apenas redireciona
+                    Mapa.executarMenu(scanner, perfil);
                     break;
                 case "2":
-                    Post.adicionarPost(scanner); // ⚠ Redireciona para Posts.java
+                    Post.adicionarPost(scanner);
                     break;
                 case "3":
                     Perfil.exibirPerfil(perfil, scanner);
@@ -73,6 +81,7 @@ public class Home {
             }
         }
     }
+    // Exibe alerta de desabamento na entrada
     private static void exibirMensagemInicial(Perfil perfil) {
         Bairro bairroAtual = perfil.getBairroAtual();
 

@@ -1,3 +1,10 @@
+package model;
+
+/*
+ * @author Fellipe Henrique Nogueira Fernandes Caluête
+ * @version 1.0
+ */
+
 import java.util.Scanner;
 
 public class Post {
@@ -26,7 +33,7 @@ public class Post {
                     }
 
                     Mapa.adicionarBairro(nome, quantidade);
-                    System.out.println("✅ Bairro adicionado com sucesso.");
+                    System.out.println("Bairro adicionado com sucesso.");
                 } catch (NumberFormatException e) {
                     System.out.println("Entrada inválida.");
                 }

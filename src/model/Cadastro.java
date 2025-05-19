@@ -1,12 +1,20 @@
+package model;
+
+/*
+ * @author Fellipe Henrique Nogueira Fernandes Caluête
+ * @version 1.0
+ */
+
 import java.util.Scanner;
 
 public class Cadastro {
-
+    // Construtor que realiza o cadastro do usuário
     public Cadastro(Perfil perfil) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=== Bem-vindo(a) ao PreMonitora ===");
 
+        // Coleta de dados do usuário
         System.out.print("Digite o seu nome: ");
         perfil.setNome(scanner.nextLine());
 
