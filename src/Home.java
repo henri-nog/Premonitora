@@ -60,7 +60,7 @@ public class Home {
                     Mapa.executarMenu(scanner, perfil); // ⚠ Aqui apenas redireciona
                     break;
                 case "2":
-                    Posts.adicionarPost(scanner); // ⚠ Redireciona para Posts.java
+                    Post.adicionarPost(scanner); // ⚠ Redireciona para Posts.java
                     break;
                 case "3":
                     Perfil.exibirPerfil(perfil, scanner);
@@ -73,7 +73,6 @@ public class Home {
             }
         }
     }
-
     private static void exibirMensagemInicial(Perfil perfil) {
         Bairro bairroAtual = perfil.getBairroAtual();
 

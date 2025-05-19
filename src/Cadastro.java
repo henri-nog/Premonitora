@@ -29,7 +29,7 @@ public class Cadastro {
         // Coleta da senha
         System.out.print("Digite a sua senha: ");
         String senha = scanner.nextLine();
-        perfil.setSenha(senha);  // Supondo que você tenha um método setSenha na classe Perfil.
+        perfil.setSenha(senha);
 
         System.out.println("Cadastro realizado com sucesso!");
     }

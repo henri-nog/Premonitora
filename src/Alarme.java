@@ -15,11 +15,9 @@ public class Alarme {
     public static void chamarSAMU() {
         System.out.println("\n\"O SAMU está a caminho\".");
     }
-
     public static void chamarBombeiros() {
         System.out.println("\n\"Os bombeiros estão a caminho\".");
     }
-
     public static void chamarDefesaCivil() {
         System.out.println("\n\"A Defesa Civil está a caminho\".");
     }

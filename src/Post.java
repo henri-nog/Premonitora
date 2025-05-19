@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Posts {
+public class Post {
 
     public static void adicionarPost(Scanner scanner) {
         System.out.print("Digite o NOME DO BAIRRO para registrar desabamento: ");

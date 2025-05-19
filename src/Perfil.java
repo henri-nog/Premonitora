@@ -6,7 +6,7 @@ public class Perfil {
     private int idade;
     private String endereco;
     private Bairro bairroAtual;
-    private String senha;  // Campo para armazenar a senha
+    private String senha;
 
     // Métodos getters e setters
     public String getNome() {
@@ -72,7 +72,7 @@ public class Perfil {
         }
     }
 
-    // Método para assinar o modo Premium
+    // Método para assinar o Modo Premium
     public void assinarModoPremium(Scanner scanner) {
         System.out.println("\nDeseja assinar o Modo Premium?");
         System.out.println("\"Premium Vigilante R$ 0 por 1 mês. Depois é só R$ 11,90/mês\"");
