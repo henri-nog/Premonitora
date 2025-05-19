@@ -38,22 +38,19 @@ public class Mapa {
     }
 
     public static void mostrarMenu() {
-        System.out.println("\nEscolha um bairro (digite o nome exatamente):");
+        System.out.println("\nEscolha um bairro:");
         for (Bairro bairro : bairros.values()) {
             System.out.println("- " + bairro);
         }
-        System.out.println("- Sair");
     }
-
-    public static boolean haRiscoNaArea() {
-        for (Bairro b : bairros.values()) {
-            if (b.getNumDesabamentos() > 0) {
-                return true;
-            }
-        }
-        return false;
-    }
-
+//    public static boolean haRiscoNaArea() {
+//        for (Bairro b : bairros.values()) {
+//            if (b.temRisco()) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
     public static void executarMenu(Scanner scanner, Perfil perfil) {
         mostrarMenu();
         System.out.print("Digite o nome do bairro: ");
@@ -66,7 +63,7 @@ public class Mapa {
             perfil.setBairroAtual(bairro); // <-- isso aqui é essencial
             System.out.println("O bairro " + bairro.getNome() + " possui " + bairro.getNumDesabamentos() + " desabamentos.");
         } else {
-            System.out.println("❌ Bairro não encontrado.");
+            System.out.println("Bairro não encontrado.");
         }
     }
 }

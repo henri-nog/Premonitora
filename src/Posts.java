@@ -12,26 +12,26 @@ public class Posts {
             // Bairro já existe → registrar desabamento
             registrarDesabamento(scanner, bairro);
         } else {
-            System.out.println("Bairro não encontrado. Deseja cadastrá-lo? (s/n)");
+            System.out.println("Bairro não encontrado. Deseja cadastrá-lo? (sim ou não)");
             String resposta = scanner.nextLine();
 
-            if (resposta.equalsIgnoreCase("s")) {
+            if (resposta.equalsIgnoreCase("sim")) {
                 System.out.print("Digite o NÚMERO DE DESABAMENTOS para esse novo bairro: ");
                 String numeroStr = scanner.nextLine();
                 try {
                     int quantidade = Integer.parseInt(numeroStr);
                     if (quantidade < 0) {
-                        System.out.println("❌ Número inválido.");
+                        System.out.println("Número inválido.");
                         return;
                     }
 
                     Mapa.adicionarBairro(nome, quantidade);
                     System.out.println("✅ Bairro adicionado com sucesso.");
                 } catch (NumberFormatException e) {
-                    System.out.println("❌ Entrada inválida.");
+                    System.out.println("Entrada inválida.");
                 }
             } else {
-                System.out.println("❌ Bairro não registrado.");
+                System.out.println("Bairro não registrado.");
             }
         }
     }
@@ -43,15 +43,15 @@ public class Posts {
         try {
             int quantidade = Integer.parseInt(numeroStr);
             if (quantidade <= 0) {
-                System.out.println("❌ O número deve ser maior que zero.");
+                System.out.println("O número deve ser maior que zero.");
                 return;
             }
 
             bairro.incrementarDesabamento(quantidade);
-            System.out.println("✅ " + quantidade + " desabamento(s) registrado(s) para o bairro " + bairro.getNome());
+            System.out.println(quantidade + " desabamento(s) registrado(s) para o bairro " + bairro.getNome());
 
         } catch (NumberFormatException e) {
-            System.out.println("❌ Entrada inválida. Digite um número.");
+            System.out.println("Entrada inválida. Digite um número.");
         }
     }
 }
