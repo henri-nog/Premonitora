@@ -5,7 +5,7 @@ package controller;
  * @version 1.0
  */
 
-import model.Perfil;
+import perfil.Perfil;
 
 import java.util.Scanner;
 

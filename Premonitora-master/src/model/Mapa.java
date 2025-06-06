@@ -8,6 +8,8 @@ package model;
  * @version 1.0
  */
 
+import perfil.Perfil;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -89,7 +91,7 @@ public class Mapa {
         Bairro bairro = buscarPorNome(nome);
         if (bairro != null) {
             perfil.setBairroAtual(bairro);
-            System.out.println("O bairro " + bairro.getNome() + " possui " + bairro.getNumDesabamentos() + " desabamentos.");
+            System.out.println("O bairro " + bairro.getNome() + " possui " + bairro.getNumRegistros() + " registros.");
         } else {
             System.out.println("Bairro não encontrado.");
         }

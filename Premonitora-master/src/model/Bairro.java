@@ -7,12 +7,12 @@ package model;
 
 public class Bairro {
     private String nome;
-    private int numDesabamentos;
+    private int numRegistros;
 
     // Construtor da classe
-    public Bairro(String nome, int numDesabamentos) {
+    public Bairro(String nome, int numRegistros) {
         this.nome = nome;
-        this.numDesabamentos = numDesabamentos;
+        this.numRegistros = numRegistros;
     }
     public String getNome() {
         return nome;
@@ -20,20 +20,20 @@ public class Bairro {
 
 
     // Getter para o número de desabamentos
-    public int getNumDesabamentos() {
-        return numDesabamentos;
+    public int getNumRegistros() {
+        return numRegistros;
     }
 
 
     // Incrementa desabamentos registrados
     public void incrementarDesabamento(int quantidade) {
-        this.numDesabamentos += quantidade;
+        this.numRegistros += quantidade;
     }
 
     // Representação do bairro como texto
     @Override
     public String toString() {
-        return nome + " (Desabamentos: " + numDesabamentos + ")";
+        return nome + " (Nº de Registros: " + numRegistros + ")";
     }
 }
 

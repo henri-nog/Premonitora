@@ -1,6 +1,6 @@
 package repository;
 
-import model.Perfil;
+import perfil.Perfil;
 
 /*
  * @author Fellipe Henrique Nogueira Fernandes Caluête

@@ -1,16 +1,19 @@
-package model;
+package post;
 
 /*
  * @author Fellipe Henrique Nogueira Fernandes Caluête
  * @version 1.0
  */
 
+import model.Bairro;
+import model.Mapa;
+
 import java.util.Scanner;
 
 public class Post {
 
     public static void adicionarPost(Scanner scanner) {
-        System.out.print("Digite o NOME DO BAIRRO para registrar desabamento: ");
+        System.out.print("Digite o NOME DO BAIRRO para fazer o registro: ");
         String nome = scanner.nextLine();
 
         Bairro bairro = Mapa.buscarPorNome(nome);
@@ -23,7 +26,7 @@ public class Post {
             String resposta = scanner.nextLine();
 
             if (resposta.equalsIgnoreCase("sim")) {
-                System.out.print("Digite o NÚMERO DE DESABAMENTOS para esse novo bairro: ");
+                System.out.print("Quantos POSTS você deseja registrar: ");
                 String numeroStr = scanner.nextLine();
                 try {
                     int quantidade = Integer.parseInt(numeroStr);

@@ -6,6 +6,8 @@ package view;
  */
 
 import model.*;
+import perfil.Perfil;
+import post.Post;
 
 import java.util.Scanner;
 
@@ -24,7 +26,7 @@ public class Home {
                 System.out.println("Para filtrar por seu bairro, faça \"Acessar tela inicial (Home)\" > \"Ver Mapa\" e digite o nome do bairro");
             } else {
                 //Verificando o risco de desabamento
-                if (bairroAtual.getNumDesabamentos() > 5) {
+                if (bairroAtual.getNumRegistros() > 5) {
                     // Se o risco for médio ou alto, ofereça opções para chamar serviços
                     System.out.println("\nSeu bairro está em RISCO! Você pode chamar serviços de emergência.");
                     System.out.println("1. Chamar SAMU");
@@ -92,7 +94,7 @@ public class Home {
             return;
         }
 
-        int desabamentos = bairroAtual.getNumDesabamentos();
+        int desabamentos = bairroAtual.getNumRegistros();
 
         // No caso de risco, o método exibe a mensagem de alerta e já determina o risco
         Alarme.exibirAlerta(desabamentos);
