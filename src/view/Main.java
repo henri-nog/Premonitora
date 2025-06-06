@@ -5,9 +5,8 @@ package view;
  * @version 1.0
  */
 
-import model.Perfil;
-import model.Cadastro;
-import model.Home;
+import perfil.Perfil;
+import controller.Cadastro;
 import model.Mapa;
 
 

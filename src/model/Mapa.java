@@ -8,6 +8,8 @@ package model;
  * @version 1.0
  */
 
+import perfil.Perfil;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;

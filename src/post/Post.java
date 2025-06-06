@@ -1,9 +1,12 @@
-package model;
+package post;
 
 /*
  * @author Fellipe Henrique Nogueira Fernandes Caluête
  * @version 1.0
  */
+
+import model.Bairro;
+import model.Mapa;
 
 import java.util.Scanner;
 

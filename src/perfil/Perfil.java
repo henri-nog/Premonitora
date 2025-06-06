@@ -1,9 +1,12 @@
-package model;
+package perfil;
 
 /*
  * @author Fellipe Henrique Nogueira Fernandes Caluête
  * @version 1.0
  */
+
+import model.Bairro;
+import model.Usuario;
 
 import java.util.Scanner;
 

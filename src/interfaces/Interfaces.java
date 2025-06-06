@@ -1,5 +1,7 @@
 package interfaces;
 
+import perfil.Perfil;
+
 import java.util.List;
 
 /*
@@ -10,13 +12,13 @@ import java.util.List;
 // Interface definindo operações básicas de CRUD para o Perfil
 public interface Interfaces {
     // Cria um novo perfil
-    void criar(model.Perfil perfil);
+    void criar(Perfil perfil);
     // Lê perfil pelo CPF
-    model.Perfil ler(String cpf);
+    Perfil ler(String cpf);
     // Atualiza um perfil existente
-    void atualizar(model.Perfil perfil);
+    void atualizar(Perfil perfil);
     // Remove perfil pelo CPF
     void deletar(String cpf);
     // Retorna lista de todos os perfis
-    List<model.Perfil> listarTodos();
+    List<Perfil> listarTodos();
 }

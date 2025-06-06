@@ -1,9 +1,15 @@
-package model;
+package view;
 
 /*
  * @author Fellipe Henrique Nogueira Fernandes Caluête
  * @version 1.0
  */
+
+import model.Alarme;
+import model.Bairro;
+import model.Mapa;
+import perfil.Perfil;
+import post.Post;
 
 import java.util.Scanner;
 
@@ -54,7 +60,7 @@ public class Home {
             }
 
             // Exibindo menu
-            System.out.println("\n===*** TELA INICIAL (HOME) ***==="); // Menu do model.Home
+            System.out.println("\n===*** TELA INICIAL (HOME) ***==="); // Menu do view.Home
             System.out.println("1. Ver Mapa");
             System.out.println("2. Adicionar novo registro");
             System.out.println("3. Acessar perfil");

@@ -1,9 +1,11 @@
-package model;
+package controller;
 
 /*
  * @author Fellipe Henrique Nogueira Fernandes Caluête
  * @version 1.0
  */
+
+import perfil.Perfil;
 
 import java.util.Scanner;
 
