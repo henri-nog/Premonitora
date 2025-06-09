@@ -57,7 +57,7 @@ public class Post {
             }
 
             bairro.incrementarDesabamento(quantidade);
-            System.out.println(quantidade + " desabamento(s) registrado(s) para o bairro " + bairro.getNome());
+            System.out.println(quantidade + " número de registro(s) para o bairro " + bairro.getNome());
 
         } catch (NumberFormatException e) {
             System.out.println("Entrada inválida. Digite um número.");

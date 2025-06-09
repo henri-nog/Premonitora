@@ -90,7 +90,7 @@ public class Home {
         Bairro bairroAtual = perfil.getBairroAtual();
 
         if (bairroAtual == null) {
-            System.out.println("\nAtualmente, NÃO há risco de desabamento na área. Fique tranquilo(a).");
+            System.out.println("\nAtualmente, NÃO há risco na área. Fique tranquilo(a).");
             return;
         }
 
