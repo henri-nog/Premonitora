@@ -19,7 +19,6 @@ public class Post {
         Bairro bairro = Mapa.buscarPorNome(nome);
 
         if (bairro != null) {
-            // Bairro já existe → registrar desabamento
             registrarDesabamento(scanner, bairro);
         } else {
             System.out.println("Bairro não encontrado. Deseja cadastrá-lo? (sim ou não)");
