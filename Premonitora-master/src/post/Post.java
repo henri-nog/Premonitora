@@ -35,7 +35,7 @@ public class Post {
                     }
 
                     Mapa.adicionarBairro(nome, quantidade);
-                    System.out.println("Bairro adicionado com sucesso.");
+                    System.out.println("\nBairro adicionado com sucesso.");
                 } catch (NumberFormatException e) {
                     System.out.println("Entrada inválida.");
                 }

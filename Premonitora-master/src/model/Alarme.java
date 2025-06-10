@@ -7,12 +7,12 @@ package model;
 
 public class Alarme {
     // Exibe mensagem de alerta com base no número de desabamentos
-    public static void exibirAlerta(int numeroDesabamentos) {
-        if (numeroDesabamentos == 0) {
+    public static void exibirAlerta(int numeroRegistros) {
+        if (numeroRegistros == 0) {
             System.out.println("Atualmente, NÃO há risco na área. Fique tranquilo(a).");
-        } else if (numeroDesabamentos < 5) {
+        } else if (numeroRegistros < 5) {
             System.out.println("Sua área possui risco LEVE.");
-        } else if (numeroDesabamentos > 5 && numeroDesabamentos < 10) {
+        } else if (numeroRegistros > 5 && numeroRegistros < 10) {
             System.out.println("Sua área possui risco MÉDIO.");
         }  else {
             System.out.println("ATENÇÃO!!! ALTO RISCO em sua área!");
