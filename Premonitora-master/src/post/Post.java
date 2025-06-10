@@ -56,7 +56,7 @@ public class Post {
                 return;
             }
 
-            bairro.incrementarDesabamento(quantidade);
+            bairro.incrementarRegistro(quantidade);
             System.out.println(quantidade + " número de registro(s) para o bairro " + bairro.getNome());
 
         } catch (NumberFormatException e) {

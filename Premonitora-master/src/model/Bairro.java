@@ -26,7 +26,7 @@ public class Bairro {
 
 
     // Incrementa desabamentos registrados
-    public void incrementarDesabamento(int quantidade) {
+    public void incrementarRegistro(int quantidade) {
         this.numRegistros += quantidade;
     }
 

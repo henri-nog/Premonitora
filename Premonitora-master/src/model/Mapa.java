@@ -60,10 +60,10 @@ public class Mapa {
     /**
      * Adiciona um novo bairro ao mapa com a quantidade de desabamentos.
      * @param nome Nome do bairro.
-     * @param numDesabamentos Número de desabamentos registrados.
+     * @param numRegistros Número de desabamentos registrados.
      */
-    public static void adicionarBairro(String nome, int numDesabamentos) {
-        bairros.put(nome.trim(), new Bairro(nome.trim(), numDesabamentos));
+    public static void adicionarBairro(String nome, int numRegistros) {
+        bairros.put(nome.trim(), new Bairro(nome.trim(), numRegistros));
     }
 
     /**
